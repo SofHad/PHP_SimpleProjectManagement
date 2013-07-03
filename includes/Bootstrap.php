@@ -1,9 +1,12 @@
 <?php
-//PDO
-require_once '../../configuration.php';
-$config = new JConfig() ;
+/*
+  # ------------------------------------------------------------------------
+  # SimpleProjectManagement
+  # ------------------------------------------------------------------------
+  # Developer : Sofiane Haddag, sofiane.haddag@yahoo.fr
+ */
 require_once 'Factory.php';
 
-$Factory = new Factory($config) ;
+$Factory = new Factory() ;
 
 ?>

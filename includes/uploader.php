@@ -1,4 +1,10 @@
 <?php
+/*
+  # ------------------------------------------------------------------------
+  # SimpleProjectManagement
+  # ------------------------------------------------------------------------
+  # Developer : Sofiane Haddag, sofiane.haddag@yahoo.fr
+ */
 
 class uploader {
 

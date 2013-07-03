@@ -1,4 +1,11 @@
 <?php
+/*
+  # ------------------------------------------------------------------------
+  # SimpleProjectManagement
+  # ------------------------------------------------------------------------
+  # Developer : Sofiane Haddag, sofiane.haddag@yahoo.fr
+ */
+
 require_once '../includes/Bootstrap.php';
 if (isset($_GET["del"])) {
    $del = $_GET["del"];

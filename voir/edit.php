@@ -1,4 +1,11 @@
 <?php
+/*
+  # ------------------------------------------------------------------------
+  # SimpleProjectManagement
+  # ------------------------------------------------------------------------
+  # Developer : Sofiane Haddag, sofiane.haddag@yahoo.fr
+ */
+
 require_once '../includes/Bootstrap.php';
    if (isset($_POST) && !empty($_POST)) {
       $id = (int) $_POST["id"];

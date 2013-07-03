@@ -1,4 +1,11 @@
 <?php
+/*
+  # ------------------------------------------------------------------------
+  # SimpleProjectManagement
+  # ------------------------------------------------------------------------
+  # Developer : Sofiane Haddag, sofiane.haddag@yahoo.fr
+ */
+
 require_once '../includes/Bootstrap.php';
 $sql = "SELECT * FROM " . $Factory->table . "  ORDER BY id ";
 $outputs = $Factory->getSQL($sql);

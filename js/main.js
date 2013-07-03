@@ -1,3 +1,10 @@
+/*
+ # ------------------------------------------------------------------------
+ # SimpleProjectManagement
+ # ------------------------------------------------------------------------
+ # Developer : Sofiane Haddag, sofiane.haddag@yahoo.fr
+ */
+
 jQuery(function($) {
    $("a.edit").click(function(e) {
       e.preventDefault();

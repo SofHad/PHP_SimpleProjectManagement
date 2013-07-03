@@ -1,12 +1,27 @@
 <?php
+/*
+  # ------------------------------------------------------------------------
+  # SimpleProjectManagement
+  # ------------------------------------------------------------------------
+  # Developer : Sofiane Haddag, sofiane.haddag@yahoo.fr
+ */
 
 class Factory {
 
-   private $cnx, $config;
+   private $cnx, $config, $host, $db, $user, $password;
    public $assigner, $statut;
-   public $table = "commerciaux";
+   public $table = "SimpleProjectManagement";
 
-   function __construct($config) {
+   function __construct() {
+
+      //config
+      $this->config = parse_ini_file("config.ini");
+      $this->assigner = explode(",", $this->config["assigner"]);
+      $this->statut = explode(",", $this->config["statuts"]);
+      $this->host =$this->clean($this->config["host"]);
+      $this->db = $this->clean($this->config["db"]);
+      $this->user = $this->clean($this->config["user"]);
+      $this->password = $this->clean($this->config["password"]);
 
       try {
 
@@ -14,7 +29,7 @@ class Factory {
           *  Création de la connexion
           *
           */
-         $this->cnx = new PDO("mysql:host=" . $config->host . ";port= ;dbname=" . $config->db, $config->user, $config->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+         $this->cnx = new PDO("mysql:host=" . $this->host . ";port= ;dbname=" . $this->db, $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
          // Dialogue en UTF-8 avec la base :
          $this->cnx->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'UTF8'");
          // Déclenche les erreur comme des exceptions :
@@ -22,11 +37,6 @@ class Factory {
       } catch (PDOException $ep_error) {
          echo $ep_error->getMessage();
       }
-
-      //config
-      $this->config = parse_ini_file("config.ini");
-      $this->assigner = explode(",", $this->config["assigner"]);
-      $this->statut = explode(",", $this->config["statuts"]);
    }
 
    public function getCnx() {
@@ -117,8 +127,8 @@ class Factory {
          $this->error($ep_error);
       }
    }
-   
-      function updateUser($input, $id) {
+
+   function updateUser($input, $id) {
       try {
          $sql = "UPDATE " . $this->table . " SET	
          etat = :etat,	
@@ -202,7 +212,7 @@ class Factory {
          $out .= "<option ";
          $out .= $this->select($option, $val);
          $out .=">";
-         $out .= $val ;
+         $out .= $val;
          $out .= "</option>";
       }
       return $out;

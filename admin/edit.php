@@ -1,4 +1,11 @@
 <?php
+/*
+  # ------------------------------------------------------------------------
+  # SimpleProjectManagement
+  # ------------------------------------------------------------------------
+  # Developer : Sofiane Haddag, sofiane.haddag@yahoo.fr
+ */
+
 require_once '../includes/Bootstrap.php';
 
 
@@ -122,9 +129,9 @@ if (isset($_GET["add"])) {
                      <select id="etat" name="etat">
                         <?php
                         if (!isset($outputs["etat"])) {
-                           $etat= null;
+                           $etat = null;
                         } else {
-                           $etat= $outputs["etat"];
+                           $etat = $outputs["etat"];
                         }
                         echo $Factory->getOptions($etat, $Factory->statut);
                         ?>

@@ -1,4 +1,11 @@
 <?php
+/*
+  # ------------------------------------------------------------------------
+  # SimpleProjectManagement
+  # ------------------------------------------------------------------------
+  # Developer : Sofiane Haddag, sofiane.haddag@yahoo.fr
+ */
+
 require_once '../includes/Bootstrap.php';
 require_once '../includes/uploader.php';
 
@@ -7,7 +14,7 @@ $upload = new uploader ();
 if (isset($_FILES["upload"]["name"])) {
    $upload->handle($_FILES, $Factory);
    $filepath = $upload->getFilepath();
-} elseif (isset($_POST["step"]) && (int)$_POST["step"] == 1) {
+} elseif (isset($_POST["step"]) && (int) $_POST["step"] == 1) {
    $upload->add($_POST, $Factory);
 }
 ?>
@@ -69,8 +76,8 @@ if (isset($_FILES["upload"]["name"])) {
                            echo "</td>";
                            echo "</tr>";
                         }
-                     }else {
-                        echo '<tr><td><strong>Rien à télécharger :</strong> soit tous les BDC existent ou votre fichier ne respecte pas le format d\'échange de données</td></tr>' ;
+                     } else {
+                        echo '<tr><td><strong>Rien à télécharger :</strong> soit tous les BDC existent ou votre fichier ne respecte pas le format d\'échange de données</td></tr>';
                      }
                      ?>
                      <!--            BDC-->

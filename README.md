@@ -1,0 +1,3 @@
+- Importez la BDD
+- Modifiez le fichier includes/config.ini
+- Modifiez le scripte à votre guise
